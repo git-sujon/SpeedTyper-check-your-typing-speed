@@ -48,6 +48,8 @@ const typeController = (e) => {
   } 
   else {
     display.innerHTML += `<span class="red">${newLetter === " " ? "▪" : newLetter}</span>`;
+    // bug 8 : fix the error count 
+    errorCount++;
   }
 
   // check if given question text is equal to user typed text
@@ -81,7 +83,7 @@ const gameOver = () => {
   // make it inactive
   display.classList.add("inactive");
   // console.log(timeTaken)
-  console.log(errorCount)
+  // console.log(errorCount)
   // show result
   resultModal.innerHTML += `
     <h1>Finished!</h1>
@@ -89,8 +91,8 @@ const gameOver = () => {
     <p>You made <span class="bold red">${errorCount}</span> mistakes</p>
     <button onclick="closeModal()">Close</button>
   `;
-// bug 4 display modal 
-  displayHistory(questionText, timeTaken, errorCount);
+// bug 4 display history
+addHistory(questionText, timeTaken, errorCount);
 
   // restart everything
   startTime = null;
