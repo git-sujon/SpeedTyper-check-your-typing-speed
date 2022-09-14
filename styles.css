@@ -63,7 +63,7 @@ body {
 }
 #result {
   position: fixed;
-  /* bug fix 5 : display modal middle  */
+  /* bug 5 fix  : display modal middle  */
   top: 50%; 
   left: 50%;
   transform: translate(-50%, -50%);

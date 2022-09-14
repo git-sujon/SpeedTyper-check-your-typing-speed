@@ -69,7 +69,8 @@ const gameOver = () => {
   // the current time is the finish time
   // so total time taken is current time - start time
   const finishTime = new Date().getTime();
-  const timeTaken = ((finishTime - startTime) / 1000);
+  // bug -7 fix secound count on Modal 
+  const timeTaken = parseInt((finishTime - startTime) / 1000);
 
   // show result modal
   resultModal.innerHTML = "";
@@ -88,7 +89,7 @@ const gameOver = () => {
     <p>You made <span class="bold red">${errorCount}</span> mistakes</p>
     <button onclick="closeModal()">Close</button>
   `;
-// bug -4 display modal 
+// bug 4 display modal 
   displayHistory(questionText, timeTaken, errorCount);
 
   // restart everything
@@ -138,7 +139,7 @@ displayHistory();
 // Show typing time spent
 setInterval(() => {
   const currentTime = new Date().getTime();
-  // bug -6 fix secound count on display 
+  // bug 6 fix secound count on display 
   const timeSpent = parseInt((currentTime - startTime) / 1000);
 
 
