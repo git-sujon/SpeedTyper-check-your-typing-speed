@@ -17,6 +17,7 @@ fetch("./texts.json")
   .then((data) => {
     questionText = data[Math.floor(Math.random() * data.length)];
     question.innerHTML = questionText;
+    console.log(questionText)
   });
 
 // checks the user typed character and displays accordingly
@@ -44,7 +45,8 @@ const typeController = (e) => {
 
   if (newLetterCorrect) {
     display.innerHTML += `<span class="green">${newLetter === " " ? "▪" : newLetter}</span>`;
-  } else {
+  } 
+  else {
     display.innerHTML += `<span class="red">${newLetter === " " ? "▪" : newLetter}</span>`;
   }
 
@@ -107,6 +109,7 @@ const start = () => {
   countdownOverlay.style.display = "flex";
 
   const startCountdown = setInterval(() => {
+
     countdownOverlay.innerHTML = '<h1>${count}</h1>';
 
     // finished timer
