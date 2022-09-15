@@ -17,7 +17,8 @@ fetch("./texts.json")
   .then((data) => {
     questionText = data[Math.floor(Math.random() * data.length)];
     question.innerHTML = questionText;
-    // console.log(questionText)
+    
+    // console.log(questionText.length)
   });
 
 // checks the user typed character and displays accordingly
@@ -56,6 +57,7 @@ const typeController = (e) => {
   if (questionText === userText) {
     gameOver();
   }
+
 };
 
 const validate = (key) => {
@@ -82,8 +84,7 @@ const gameOver = () => {
   display.innerHTML = "";
   // make it inactive
   display.classList.add("inactive");
-  // console.log(timeTaken)
-  // console.log(errorCount)
+
   // show result
   resultModal.innerHTML += `
     <h1>Finished!</h1>
@@ -92,8 +93,17 @@ const gameOver = () => {
     <button onclick="closeModal()">Close</button>
   `;
 // bug 4 display history
-addHistory(questionText, timeTaken, errorCount);
+//Calculating Word per minute
+const questionLenght= questionText.length
+const wpm= parseInt((questionLenght/5 ) / (timeTaken/60))
+// console.log(wpm)
+const accuracy= parseInt(((questionLenght-errorCount)/ questionLenght) * 100)
+// console.log(accuracy) 
 
+addHistory(questionText, timeTaken, errorCount, wpm, accuracy);
+
+
+  
   // restart everything
   startTime = null;
   errorCount = 0;
