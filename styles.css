@@ -191,10 +191,10 @@ button {
   margin-right: 20px;
 }
 
-.Nav-Active{
+.Nav-Active, .Nav-inactive:hover{
   outline:  1px solid #9dffad;
 }
-.Nav-Active:hover {
+.Nav-Active:hover, .Nav-inactive  {
   outline:  1px solid white;
 }
 .Nav-Active a {
@@ -204,21 +204,17 @@ button {
 .Nav-Active a:hover {
   color: white;
 }
-
-.Nav-inactive {
-  outline:  1px solid white;
-}
-.Nav-inactive:hover {
-  outline:  1px solid #9dffad;
-}
-.Nav-inactive a{
-  color: white;
-  text-decoration: none;
-
-}
 .Nav-inactive a:hover {
   color: #9dffad;
 }
+
+
+
+.Nav-inactive a{
+  color: white;
+  text-decoration: none;
+}
+
 
 
 

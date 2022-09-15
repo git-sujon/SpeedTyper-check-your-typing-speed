@@ -1,12 +1,355 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Speed Monster | Blog</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Speed Monster</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- css style   -->
+  <link rel="stylesheet" href="accordion.css">
+  <link rel="stylesheet" href="styles.css" />
+
 </head>
+
 <body>
-    <h1></h1>
+
+  <header>
+    <h1 class="title"><img src="./logo.png" /></h1>
+    <!-- NavBar section start  -->
+    <nav class="NavBar box-container">
+      <p class="nav-item Nav-inactive"><a class="nav-link" href="index.html">Home</a></p>
+      <p class="nav-item Nav-Active "><a class="" href="blog.html">Blog</a></p>
+    </nav>
+    <!-- NavBar section End -->
+  </header>
+
+  <section class="box-container">
+    <h1 class="faq">FAQ</h1>
+
+    <div class="accordion">
+      <div class="accordion-item">
+        <div class="accordion-item-header">
+          <p class="title">Difference between LocalStorage and SessionStorage?</p>
+        </div><!-- /.accordion-item-header -->
+        <div class="accordion-item-body">
+          <div class="accordion-item-body-content">
+            <h2 class="pb">LocalStorage:</h2>
+            <p>LocalStorage is a data storage type of web storage. This allows the JavaScript sites and apps to store
+              and access the data without any expiration date. This means that the data will always be persisted and
+              will not expire. So, data stored in the browser will be available even after closing the browser window.
+            </p>
+            <p>
+              In short, all we can say is that the localStorage holds the data with no expiry date, which is available
+              to the user even after closing the browser window. It is useful in various ways, such as remembering the
+              shopping cart data or user login on any website.
+            </p>
+            <p>
+              In the past, cookies were the only option to remember this type of temporary and local information, but
+              now we have localStorage as well. Local storage comes with a higher storage limit than cookies (5MB vs
+              4MB). It also does not get sent with every HTTP request. So, it is a better choice now for client-side
+              storage. Some essential points of localStorage need to be noted
+            </p>
+            <p>
+            <p><br></p>
+            <ul class="ml mb">
+              <li>
+                <p>localStorage is not secure to store sensitive data and can be accessed using any code. So, it is
+                  quite insecure.</p>
+              </li>
+              <li>
+                <p>It is an advantage of localStorage over cookies that it can store more data than cookies. You can
+                  store 5MB data on the browser using localStorage.</p>
+              </li>
+              <li>
+                <p>localStorage stores the information only on browser instead of in the database. Thereby the
+                  localStorage is not a substitute for a server-based database.</p>
+              </li>
+              <li>
+                <p>localStorage is synchronous, which means that each operation executes one after another.</p>
+              </li>
+            </ul>
+            </p>
+            <div>
+              <p><strong>localStorage Methods:</strong></p>
+              <ul class="ml">
+                <li>
+                  <p>setItem()&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;This method is used to add the
+                    data through key and value to localStorage.</p>
+                </li>
+                <li>
+                  <p>getItem()&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;It is used to fetch or retrieve
+                    the value from the storage using the key.</p>
+                </li>
+                <li>
+                  <p>removeItem()&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;It removes an item from storage by using the key.
+                  </p>
+                </li>
+                <li>
+                  <p>clear()&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;It is used to gets clear all the
+                    storage.</p>
+                </li>
+              </ul>
+              <p><br></p>
+              <p>Example:&nbsp;localStorage.setItem().</p>
+              <p><br></p>
+              <ul class="ml">
+                <li>
+                  <p>Remember that localStorage property is read-only. &nbsp;</p>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="mb"><strong>Advantage of localStorage</strong></p>
+              <p>The localStorage has come with several advantages. First and essential advantage of localStorage is
+                that&nbsp;it can store temporary but useful data in the browser, which remains even after the browser
+                window closes.&nbsp;Below is a list of some advantages:</p>
+              <p><br></p>
+              <ul class="ml">
+                <li>
+                  <p>The data collected by localStorage is stored in the browser. You can&nbsp;store 5-10 MB
+                    data&nbsp;in the browser.</p>
+                </li>
+                <li>
+                  <p>There is data stored by localStorage.</p>
+                </li>
+                <li>
+                  <p>You can remove all the localStorage items by a single line code, i.e., clear().</p>
+                </li>
+                <li>
+                  <p>The localStorage data persists even after closing the browser window, like items in a shopping
+                    cart.</p>
+                </li>
+                <li>
+                  <p>It also has advantages over cookies because it can store more data than cookies.</p>
+                </li>
+              </ul>
+            </div>
+
+            <p class="mb"></p>
+            <p class="img">
+              <img src="https://researchhubs.com/uploads/web-storage.png" alt="">
+            </p>
+            <h2 class="pb">SessionStorage:</h2>
+            <p>
+              The read-only sessionStorage property accesses a session Storage object for the current origin.
+              sessionStorage is similar to localStorage; the difference is that while data in localStorage doesn't
+              expire, data in sessionStorage is cleared when the page session ends.
+            </p>
+            <div>
+              <ul class="ml">
+                <li>
+                  <p>Whenever a document is loaded in a particular tab in the browser, a unique page session gets
+                    created and assigned to that particular tab. That page session is valid only for that particular
+                    tab.</p>
+                </li>
+                <li>
+                  <p>A page session lasts as long as the tab or the browser is open, and&nbsp;survives over page reloads
+                    and restores.</p>
+                </li>
+                <li>
+                  <p>Opening a page in a new tab or window creates a new session with the value of the top-level
+                    browsing context, which differs from how session cookies work.</p>
+                </li>
+                <li>
+                  <p>Opening multiple tabs/windows with the&nbsp;same URL creates sessionStorage for each tab/window.
+                  </p>
+                </li>
+                <li>
+                  <p>Duplicating a tab copies the tab&apos;s sessionStorage into the new tab.</p>
+                </li>
+              </ul>
+              <p>Closing a tab/window ends the session and clears objects in sessionStorage.</p>
+            </div>
+            <p>
+              Local storage and session storage both provide a large memory capacity. To be more specific, local Storage
+              stores up to 10 megabytes and session storage stores up to 5 megabytes. On the other hand, cookies provide
+              a very restrictive and small storage capacity of 4 kilobytes.
+            </p>
+            <p class="img">
+              <img src="https://miro.medium.com/max/1114/1*O70Ml_4EqDa7i3uV0dlK1A.png" alt="">
+            </p>
+          </div>
+        </div><!-- /.accordion-item-body -->
+      </div><!-- /.accordion-item -->
+
+      <div class="accordion-item">
+        <div class="accordion-item-header">
+          <p class="title">Difference between local scope and block scope?</p>
+        </div><!-- /.accordion-item-header -->
+        <div class="accordion-item-body">
+          <div class="accordion-item-body-content">
+            <div class="mb">
+              <h2 class="mb">Global Scope Variables</h2>
+              Global scope variables - When a variable is globally scoped, it means it is available from anywhere in
+              your program. Declaring a variable outside a function or a block. outside a function leads to it being
+              globally scoped.
+            </div>
+
+            <div>
+              <p class="img">
+                <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1600864549731/CPpg9u2gi.png" alt="">
+              </p>
+            </div>
+
+            <div>
+              <h2 class="mb">Block scoped variables</h2>
+              Block Scoped Variables - A block scoped variable means that the variable defined within a block will not
+              be accessible from outside the block. A block can reside inside a function, and a block scoped variable
+              will not be available outside the block even if the block is inside a function.
+            </div>
+
+          </div>
+        </div><!-- /.accordion-item-body -->
+      </div><!-- /.accordion-item -->
+
+
+
+      <div class="accordion-item">
+        <div class="accordion-item-header">
+          <p class="title">How event loops work in Javascript?</p>
+        </div><!-- /.accordion-item-header -->
+        <div class="accordion-item-body">
+          <div class="accordion-item-body-content">
+            <div class="mb">
+              <h2 class="mb">Event Loop</h2>
+              <p>JavaScript is a single-threaded programming language. This means that JavaScript can do only one thing
+                at a single point in time.
+              </p>
+              <p>
+                The JavaScript engine executes a script from the top of the file and works its way down. It creates the
+                execution contexts, pushes, and pops functions onto and off the call stack in the execution phase.
+              </p>
+
+              <p>
+                If a function takes a long time to execute, you cannot interact with the web browser during the
+                function's execution because the page hangs.
+              </p>
+              <p>
+                A function that takes a long time to complete is called a blocking function. Technically, a blocking
+                function blocks all the interactions on the webpage, such as mouse click.
+                The event loop is the secret behind JavaScript’s asynchronous programming. JS executes all operations on
+                a single thread, but using a few smart data structures, it gives us the illusion of multi-threading.
+                Let's take a look at what happens on the back-end.
+              </p>
+
+              
+            </div>
+
+            <div>
+              <p class="img">
+                <img src="https://miro.medium.com/max/1200/1*MnRk2ZVl5acI5BFmmw7IRg.png" alt="">
+              </p>
+            </div>
+
+            <div>
+              <h3 class="mb">The call stack </h3>
+              <p class="mb pb">
+                The call stack is responsible for keeping track of all the operations in line to be executed. Whenever a function is finished, it is popped from the stack.
+              </p>
+            </div>
+            <p>
+              - The event queue is responsible for sending new functions to the stack for processing. It follows the queue data structure to maintain the correct sequence in which all operations should be sent for execution.
+            </p>
+            <p>
+              Whenever an async function is called, it is sent to a browser API. These are APIs built into the browser. Based on the command received from the call stack, the API starts its own single-threaded operation.
+            </p>
+            <p class="img">
+              <img src="https://www.javascripttutorial.net/wp-content/uploads/2019/12/javascript-event-loop-callstack.png" alt="">
+            </p>
+            <p>
+              An example of this is the setTimeout method. When a setTimeout operation is processed in the stack, it is sent to the corresponding API which waits till the specified time to send this operation back in for processing.
+            </p>
+            <p>
+              Where does it send the operation? The event queue. Hence, we have a cyclic system for running async operations in JavaScript. The language itself is single-threaded, but the browser APIs act as separate threads.
+            </p>
+            <p>
+              The event loop facilitates this process; it constantly checks whether or not the call stack is empty. If it is empty, new functions are added from the event queue. If it is not, then the current function call is processed.
+            </p>
+
+          </div>
+        </div><!-- /.accordion-item-body -->
+      </div><!-- /.accordion-item -->
+
+
+      <div class="accordion-item">
+        <div class="accordion-item-header">
+          <p class="title">How many ways we can get Undefined in JavaScript?</p>
+        </div><!-- /.accordion-item-header -->
+        <div class="accordion-item-body">
+          <div class="accordion-item-body-content">
+            <div class="mb">
+              <h2 class="mb">Undefined</h2>
+              <p>The global undefined property represents the primitive value undefined. It is one of JavaScript's primitive types.
+              </p>
+              <p>
+                A variable that has not been assigned a value is of type undefined. A method or statement also returns undefined if the variable that is being evaluated does not have an assigned value. A function returns undefined if a value was not returned.
+              </p>
+            </div>
+
+            <div>
+              <p class="img">
+                <img src="https://wesbos.com/static/ba86f25897654e080d5b98bcb0314576/98b29/undefined-variable-in-console.png" alt="">
+              </p>
+            </div>
+
+            <div >
+              <h3 class="pb"><strong>8 Ways to get Undefined</strong></h3>
+
+              <div>
+                <ol class="ml">
+             
+               
+                          <li>
+                              <p>Variables that have not been initialized are given undefined.</p>
+                          </li>
+                          <li>
+                              <p>Function with no Return.</p>
+                          </li>
+                          <li>
+                              <p>Parameters that are not passed will be undefined.</p>
+                          </li>
+                          <li>
+                              <p>If Return will not return anything will give undefined.</p>
+                          </li>
+                          <li>
+                              <p>Accessing Property that does not exist on Object will give undefined.</p>
+                          </li>
+                          <li>
+                              <p>Accessing array elements outside of the index range will give Undefined.</p>
+                          </li>
+                          <li>
+                              <p>Deleting an element inside an array will give Undefined.</p>
+                          </li>
+                          <li>
+                              <p>Set a value directly undefined.</p>
+                          </li>
+                      
+           
+              </ol>
+              </div>
+
+            </div>
+
+      
+
+          </div>
+        </div><!-- /.accordion-item-body -->
+      </div><!-- /.accordion-item -->
+
+    </div>
+  </section>
+
+
+
+
+
+  <script src="accordion.js"></script>
 </body>
+
 </html>
