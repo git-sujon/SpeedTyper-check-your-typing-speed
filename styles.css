@@ -148,47 +148,38 @@ button {
 }
 
 #histories {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  text-align: center;
+
 }
 
 .card {
   width: 100%;
   height: 100%;
-
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-
   color: white;
   border-radius: 15px;
-
- 
-  backdrop-filter: blur(5px);
-  margin-bottom: 30px;
-}
-
-
-.col {
-  width: 14%;
-  margin-right: 10px;
-  border: 1px solid rgba(112, 128, 144, 0.247);
-  padding: 20px 30px;
+  padding:30px;
   background: linear-gradient(
     92.49deg,
     rgba(255, 255, 255, 0.1) 0.18%,
     rgba(255, 255, 255, 0.05) 99.85%
   );
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(112, 128, 144, 0.247);
+
 }
 
-.col-text {
-  width: 40%;
+
+.col {
+  border: 1px solid rgba(112, 128, 144, 0.247);
+  padding: 10px 0px;
+  
 }
 
-.col:last-child {
-  margin-right: 0px;
-}
+
 
 #modal-background {
   background: rgb(255, 255, 255);
@@ -248,9 +239,7 @@ button {
   .card {
     flex-direction: column;
   }
-  .col {
-    width: 100%;
-    text-align: center;
-    margin-right: 0px;
+  #histories {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
