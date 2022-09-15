@@ -15,10 +15,12 @@ function addHistory(questionText, timeTaken, errorCount, wpm, accuracy) {
   <p>You made <span class="bold red">${errorCount}</span> mistakes</p>
   </div>
 
+  <!-- Word per minute is Added  -->
   <div class="col">
   <p>Typing speed <span class="bold yellow">${wpm}</span> WPM</p>
   </div>
 
+  <!-- Typing Accuracy is Added  -->
   <div class="col">
   <p>Typing accuracy <span class="bold yellow">${accuracy}</span>%</p>
   </div>
@@ -53,11 +55,12 @@ function displayHistory() {
     <p>You made <span class="bold red">${test.errorCount}</span> mistakes</p>
     </div>
 
+  <!-- Word per minute is Added  -->
     <div class="col">
     <p>Typing speed <span class="bold yellow">${test.wpm}</span> WPM</p>
     </div>
 
-    
+    <!-- Typing Accuracy is Added  -->
   <div class="col">
   <p>Typing accuracy <span class="bold yellow">${test.accuracy}</span>%</p>
   </div>
